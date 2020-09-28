@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <listeners>
+        <listener class-name="helpers.ExtentReporterNG"></listener>
+    </listeners>
+    <test verbose="2" preserve-order="true" name="Get Users With Delay">
+        <classes>
+            <class name="tests.ListUsersDelay">
+              <methods>
+                  <include name="GetDelayedResponsePositiveNumber"/>
+              </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true" name="Get All Users">
+        <classes>
+            <class name="tests.ListUsers">
+                <methods>
+                    <include name="ListAllUsers"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true" name="Delete user">
+        <classes>
+            <class name="tests.DeleteUserById">
+                <methods>
+                    <include name="DeleteUser"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true" name="Register user">
+        <classes>
+            <class name="tests.UnsuccessfulRegister">
+                <methods>
+                    <include name="UnsuccessfulRegisterWithWrongEmailOnly"/>
+                    <include name="UnsuccessfulRegisterWithWrongEmailAndWrongUsername"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
