@@ -1,6 +1,7 @@
 package tests;
 
 import bots.users.GetUsers;
+import com.aventstack.extentreports.Status;
 import helpers.ReadFromPom;
 import helpers.testExtender;
 import mapper.listUsers.GetUsersResponse;
@@ -16,7 +17,9 @@ public class ListUsers extends testExtender{
 
     @Test
     public void ListAllUsers() throws IOException  {
-
+        test = extent.createTest("ListAllUsers");
+        logger.info("ListAllUsers");
+        test.log(Status.INFO, "ListAllUsers");
         //Those functions will call Get users and do simple assertions
         GetUsersResponse responseGetUsers = getUsers.GetAllUsers(null,null);
 //        Assert.assertEquals(String.format("Status Code is %s and should be 200", responseGetUsers.getStatusCode()), responseGetUsers.getStatusCode(), 200);

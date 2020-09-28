@@ -1,18 +1,20 @@
 package bots.users;
 
-import bots.BaseServiceExtender;
+import helpers.ReadFromPom;
 import io.restassured.RestAssured;
 import io.restassured.response.ValidatableResponse;
 
-import static helpers.endpointsPath.ACCOUNTS_TRANSACTIONS_POLICY;
+import java.io.IOException;
 
-public class DeleteUser extends BaseServiceExtender {
+import static helpers.endpointsPath.USERS_SERVICE;
 
-    public ValidatableResponse DeleteUserById(int userId) {
+public class DeleteUser {
 
-        RestAssured.baseURI = getHostname();
+    public ValidatableResponse DeleteUserById(int userId) throws IOException {
+        ReadFromPom readFromPom = new ReadFromPom();
+        RestAssured.baseURI = readFromPom.getPropertyFomPom("BaseURL");
         return RestAssured.given()
                 .when()
-                .delete(ACCOUNTS_TRANSACTIONS_POLICY + "/" + userId).then().assertThat().statusCode(204);
+                .delete(USERS_SERVICE + "/" + userId).then().assertThat().statusCode(204);
     }
 }

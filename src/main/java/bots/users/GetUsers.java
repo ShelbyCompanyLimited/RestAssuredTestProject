@@ -1,20 +1,22 @@
 package bots.users;
 
-import bots.BaseServiceExtender;
+import helpers.ReadFromPom;
 import io.restassured.RestAssured;
 import mapper.listUsers.GetUsersResponse;
 
-import static helpers.endpointsPath.ACCOUNTS_TRANSACTIONS_POLICY;
+import java.io.IOException;
 
-public class GetUsers extends BaseServiceExtender {
-    public GetUsersResponse GetAllUsers(Integer page, Integer delay) {
+import static helpers.endpointsPath.USERS_SERVICE;
 
-        RestAssured.baseURI = getHostname();
+public class GetUsers {
+    public GetUsersResponse GetAllUsers(Integer page, Integer delay) throws IOException {
+        ReadFromPom readFromPom = new ReadFromPom();
+        RestAssured.baseURI = readFromPom.getPropertyFomPom("BaseURL");
         return RestAssured.given()
                 .queryParam("page", page)
                 .queryParam("delay", delay)
                 .when()
-                .get(ACCOUNTS_TRANSACTIONS_POLICY).then().statusCode(200).extract().as(GetUsersResponse.class);
+                .get(USERS_SERVICE).then().statusCode(200).extract().as(GetUsersResponse.class);
     }
 
 

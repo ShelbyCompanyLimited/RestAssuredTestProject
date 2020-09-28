@@ -8,8 +8,8 @@
     <artifactId>RestAssuredTestProject</artifactId>
     <version>1.0-SNAPSHOT</version>
     <properties>
-        <testIvan>NEW TEST IVAN</testIvan>
-        <testivantwo>NEW TEST</testivantwo>
+        <Environment>Test Environment</Environment>
+        <BaseURL>https://reqres.in/api/</BaseURL>
     </properties>
     <dependencies>
         <dependency>
@@ -20,12 +20,7 @@
         <dependency>
             <groupId>com.aventstack</groupId>
             <artifactId>extentreports</artifactId>
-            <version>3.0.7</version>
-        </dependency>
-        <dependency>
-            <groupId>com.relevantcodes</groupId>
-            <artifactId>extentreports</artifactId>
-            <version>2.41.2</version>
+            <version>4.1.7</version>
         </dependency>
         <dependency>
             <groupId>io.rest-assured</groupId>
@@ -76,10 +71,17 @@
             <version>4.3.1</version>
             <scope>compile</scope>
         </dependency>
+
         <dependency>
-            <groupId>com.relevantcodes</groupId>
-            <artifactId>extentreports</artifactId>
-            <version>2.41.2</version>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.12.1</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.12.1</version>
         </dependency>
     </dependencies>
 

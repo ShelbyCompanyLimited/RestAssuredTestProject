@@ -1,6 +1,7 @@
 package helpers;
 
 public interface endpointsPath {
-    String ACCOUNTS_TRANSACTIONS_POLICY = "users";
+    String USERS_SERVICE = "users";
+    String REGISTER_SERVICE = "register";
 
 }
