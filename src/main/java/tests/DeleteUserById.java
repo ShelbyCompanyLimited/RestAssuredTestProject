@@ -25,6 +25,4 @@ public class DeleteUserById extends testExtender {
         ValidatableResponse responseDeleteUser = deleteUser.DeleteUserById(readFromPropertiesFile.getUserIdForDelete());
 
     }
-
-
 }
