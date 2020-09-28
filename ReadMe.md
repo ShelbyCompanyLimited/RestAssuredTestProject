@@ -49,7 +49,7 @@ b) Additional reports can be found in : target/surefire-reports/index.html
 
 ## Authors
 
-Ivan Todorovski
+IT
 
 
 
